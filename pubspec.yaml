@@ -15,8 +15,8 @@ dependencies:
   connectivity: ^3.0.3
   cupertino_icons: ^1.0.2
   flutter_svg: ^0.22.0
-  # google_mobile_ads: ^0.12.2
   http: ^0.13.3
+  liquid_swipe: ^2.1.0
   provider: ^5.0.0
 
 dev_dependencies:
@@ -27,7 +27,6 @@ flutter:
   assets:
     - assets/
     - assets/images/
-
   # fonts:
   #   - family: Schyler
   #     fonts:

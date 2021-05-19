@@ -1,4 +1,8 @@
+import 'dart:async';
+
+import 'package:dictionary/constants/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Splash extends StatefulWidget {
   @override
@@ -6,6 +10,24 @@ class Splash extends StatefulWidget {
 }
 
 class _SplashState extends State<Splash> {
+  @override
+  void initState() {
+    navigateToNextScreen();
+    super.initState();
+  }
+
+  navigateToNextScreen() async {
+    Timer(Duration(seconds: 5), () {
+      // 5s over, navigate to a new page
+
+      Navigator.pushNamedAndRemoveUntil(
+        context,
+        Constants.onboarding,
+        (route) => false,
+      );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final mq = MediaQuery.of(context);

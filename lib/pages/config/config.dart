@@ -1,5 +1,9 @@
-import 'package:dictionary/pages/splash/splash.dart';
+import '../../constants/constants.dart';
+import '../../providers/provider.dart';
+import '../../routes/router.dart';
+import '../../themes/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ConfigApp extends StatefulWidget {
   @override
@@ -9,13 +13,14 @@ class ConfigApp extends StatefulWidget {
 class _ConfigAppState extends State<ConfigApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        accentColor: Colors.black,
-        primaryColor: Color(0xFF0090F8),
+    return MultiProvider(
+      providers: Providers.providers(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: Styles.themeData(false, context),
+        onGenerateRoute: Routers.generateRoute,
+        initialRoute: Constants.initial,
       ),
-      home: Splash(),
     );
   }
 }
